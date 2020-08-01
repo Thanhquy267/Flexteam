@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.viewModelScope
 
 abstract class BaseBindingModelFragment<VBD: ViewDataBinding,
         VM: BaseViewModel>: BaseFragment() {
@@ -25,13 +26,13 @@ abstract class BaseBindingModelFragment<VBD: ViewDataBinding,
         mLayoutBinding = DataBindingUtil.inflate(inflater, layoutId(), container, false)
         if (bindingVariable() != -1) {
             mViewModel = ViewModelProviders.of(mActivity!!).get(viewModelClass())
-//            mViewModel.mUserManager = mActivity?.mUserManager
             mViewModel.mActivityNavigator = ActivityNavigator(mActivity, this)
             mLayoutBinding.setVariable(bindingVariable(), mViewModel)
         }
         mRootView = mLayoutBinding.root
         return mRootView
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

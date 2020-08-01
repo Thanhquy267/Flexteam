@@ -33,6 +33,7 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
             mActivity?.supportFragmentManager?.addOnBackStackChangedListener(mActivity)
         }
         ft?.commitAllowingStateLoss()
+//        mActivity?.supportFragmentInjector()?.inject(fragment)
     }
 
 //    fun replaceFragment(

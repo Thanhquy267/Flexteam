@@ -1,7 +1,12 @@
 package com.flexteam.feature
 
+import com.flexteam.R
 import com.flexteam.base.BaseViewModel
-import javax.inject.Inject
+import com.flexteam.feature.login.LoginFragment
 
-class AuthViewModel @Inject constructor() : BaseViewModel() {
+class AuthViewModel : BaseViewModel() {
+    override fun onReady() {
+        super.onReady()
+        mActivityNavigator?.addFragment(R.id.fl_root, LoginFragment(),false)
+    }
 }

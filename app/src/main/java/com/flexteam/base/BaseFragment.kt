@@ -2,9 +2,8 @@ package com.flexteam.base
 
 import android.content.Context
 import androidx.fragment.app.Fragment
-import dagger.android.DaggerFragment
 
-abstract class BaseFragment : DaggerFragment() {
+abstract class BaseFragment : Fragment() {
     open val TAG = javaClass.simpleName
 
     protected var mActivity: BaseActivity? = null

@@ -10,17 +10,17 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.flexteam.utils.Utils
 import com.google.android.material.appbar.AppBarLayout
-import dagger.android.support.DaggerAppCompatActivity
 
 
 @Suppress("DEPRECATION")
 @SuppressLint("Registered")
-abstract class BaseActivity : DaggerAppCompatActivity(), FragmentManager.OnBackStackChangedListener {
+abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedListener {
 
     open val TAG = javaClass.simpleName
 
