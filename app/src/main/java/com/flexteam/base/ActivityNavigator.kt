@@ -1,9 +1,9 @@
 package com.flexteam.base
+
 import android.app.Activity
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.flexteam.R
 
 class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragment? = null) {
@@ -13,9 +13,11 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         mActivity?.finish()
     }
 
-    fun addFragment(containerId: Int, fragment: BaseFragment?, shouldAddStack: Boolean,
-                    enter: Int = R.anim.slide_in_left, exit: Int = R.anim.slide_out_left,
-                    popEnter: Int = R.anim.slide_in_right, popExit: Int = R.anim.slide_out_right) {
+    fun addFragment(
+        containerId: Int, fragment: BaseFragment?, shouldAddStack: Boolean,
+        enter: Int = R.anim.slide_in_left, exit: Int = R.anim.slide_out_left,
+        popEnter: Int = R.anim.slide_in_right, popExit: Int = R.anim.slide_out_right
+    ) {
         val fragmentManager = mActivity?.supportFragmentManager
         val ft = fragmentManager?.beginTransaction()
         if (enter > 0 || exit > 0 || popEnter > 0 || popExit > 0) {
@@ -23,7 +25,7 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         }
         if (fragment != null) {
 //            val defaultContainerId = R.id.fl_fragment_container
-            ft?.add( containerId, fragment, fragment.javaClass.simpleName)
+            ft?.replace(containerId, fragment as Fragment, fragment.javaClass.simpleName)
             if (shouldAddStack) {
                 ft?.addToBackStack(fragment.javaClass.simpleName)
             }
@@ -33,40 +35,49 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         ft?.commitAllowingStateLoss()
     }
 
-    fun replaceFragment(containerId: Int, fragment: BaseFragment?, enter: Int = R.anim.slide_in_left,
-                        exit: Int = R.anim.slide_out_left, popEnter: Int = R.anim.slide_in_right,
-                        popExit: Int = R.anim.slide_out_right) {
-        val fragmentManager = mActivity?.supportFragmentManager
-        val ft = fragmentManager?.beginTransaction()
-        if (enter > 0 || exit > 0 || popEnter > 0 || popExit > 0) {
-            ft?.setCustomAnimations(enter, exit, popEnter, popExit)
-        }
-        if (fragment != null) {
-            ft?.replace(containerId, fragment, fragment.javaClass.simpleName)
+//    fun replaceFragment(
+//        containerId: Int, fragment: BaseFragment?, enter: Int = R.anim.slide_in_left,
+//        exit: Int = R.anim.slide_out_left, popEnter: Int = R.anim.slide_in_right,
+//        popExit: Int = R.anim.slide_out_right
+//    ) {
+//        val fragmentManager = mActivity?.supportFragmentManager
+//        val ft = fragmentManager?.beginTransaction()
+//        if (enter > 0 || exit > 0 || popEnter > 0 || popExit > 0) {
+//            ft?.setCustomAnimations(enter, exit, popEnter, popExit)
+//        }
+//        if (fragment != null) {
+//            ft?.replace(containerId, fragment as Fragment, fragment.javaClass.simpleName)
+////            ft?.addToBackStack(fragment.javaClass.simpleName)
+//            mActivity?.mCurrentFragment = fragment
+//        }
+//        ft?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//        ft?.commit()
+//    }
+
+//    fun changeFragment(
+//        containerId: Int, fragment: BaseFragment?, enter: Int = R.anim.slide_in_left,
+//        exit: Int = R.anim.slide_out_left, popEnter: Int = R.anim.slide_in_right,
+//        popExit: Int = R.anim.slide_out_right
+//    ) {
+//        val fragmentManager = mActivity?.supportFragmentManager
+//        val ft = fragmentManager?.beginTransaction()
+//        if (enter > 0 || exit > 0 || popEnter > 0 || popExit > 0) {
+//            ft?.setCustomAnimations(enter, exit, popEnter, popExit)
+//        }
+//        if (fragment != null) {
+//            ft?.replace(containerId, fragment as Fragment, fragment.javaClass.simpleName)
 //            ft?.addToBackStack(fragment.javaClass.simpleName)
-            mActivity?.mCurrentFragment = fragment
-        }
-        ft?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-        ft?.commit()
-    }
-    fun changeFragment(containerId: Int, fragment: BaseFragment?, enter: Int = R.anim.slide_in_left,
-                       exit: Int = R.anim.slide_out_left, popEnter: Int = R.anim.slide_in_right,
-                       popExit: Int = R.anim.slide_out_right) {
-        val fragmentManager = mActivity?.supportFragmentManager
-        val ft = fragmentManager?.beginTransaction()
-        if (enter > 0 || exit > 0 || popEnter > 0 || popExit > 0) {
-            ft?.setCustomAnimations(enter, exit, popEnter, popExit)
-        }
-        if (fragment != null) {
-            ft?.replace(containerId, fragment, fragment.javaClass.simpleName)
-            ft?.addToBackStack(fragment.javaClass.simpleName)
-            mActivity?.mCurrentFragment = fragment
-        }
-        ft?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-        ft?.commit()
-    }
+//            mActivity?.mCurrentFragment = fragment
+//        }
+//        ft?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//        ft?.commit()
+//    }
+
     fun popToRootFragment() {
-        mActivity?.supportFragmentManager?.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        mActivity?.supportFragmentManager?.popBackStack(
+            null,
+            FragmentManager.POP_BACK_STACK_INCLUSIVE
+        )
         mActivity?.updateCurrentFragment()
     }
 
@@ -76,24 +87,33 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
     }
 
     fun popToSpecificFragment(className: String) {
-        mActivity?.supportFragmentManager?.popBackStack(className, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        mActivity?.supportFragmentManager?.popBackStack(
+            className,
+            FragmentManager.POP_BACK_STACK_INCLUSIVE
+        )
         mActivity?.updateCurrentFragment()
     }
 
     fun showFragmentAsContent(fragment: Fragment) {
-        mActivity?.supportFragmentManager?.beginTransaction()?.add(android.R.id.content, fragment)?.commit()
+        mActivity?.supportFragmentManager?.beginTransaction()?.add(android.R.id.content, fragment)
+            ?.commit()
         mActivity?.mFragmentAsContent = fragment
     }
 
     fun removeContentFragment() {
         if (mActivity?.mFragmentAsContent != null) {
-            mActivity.supportFragmentManager.beginTransaction().remove(mActivity.mFragmentAsContent!!).commit()
+            mActivity.supportFragmentManager.beginTransaction()
+                .remove(mActivity.mFragmentAsContent!!).commit()
             mActivity.mFragmentAsContent = null
         }
     }
 
 
-    private fun startActivity(intent: Intent?, requestCode: Int = -1, showProgress: Boolean = true) {
+    private fun startActivity(
+        intent: Intent?,
+        requestCode: Int = -1,
+        showProgress: Boolean = true
+    ) {
         if (mActivity?.isRunning() == false || intent == null) return
         //Testing Crash
 //        Crashlytics.getInstance().crash()
@@ -115,7 +135,7 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         }
     }
 
-    fun createToastDialog(messageId: Int){
+    fun createToastDialog(messageId: Int) {
 //        DialogUtils.showToastDialog(mActivity,mActivity?.getString(messageId))
     }
 

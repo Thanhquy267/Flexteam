@@ -12,12 +12,17 @@ import dagger.multibindings.IntoMap
 
 @Module
 abstract class AuthModule {
-    @FragmentScoped
-    @ContributesAndroidInjector
-    internal abstract fun provideLoginFragment(): LoginFragment
+//    @FragmentScoped
+//    @ContributesAndroidInjector
+//    internal abstract fun provideLoginFragment(): LoginFragment
+//
+//    @Binds
+//    @IntoMap
+//    @ViewModelKey(LoginViewModel::class)
+//    internal abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(LoginViewModel::class)
-    internal abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+    @ViewModelKey(AuthViewModel::class)
+    internal abstract fun bindAuthViewModel(viewModel: AuthViewModel): ViewModel
 }

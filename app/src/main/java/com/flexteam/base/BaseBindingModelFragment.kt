@@ -24,7 +24,7 @@ abstract class BaseBindingModelFragment<VBD: ViewDataBinding,
         Log.d(TAG,"onCreateView")
         mLayoutBinding = DataBindingUtil.inflate(inflater, layoutId(), container, false)
         if (bindingVariable() != -1) {
-            mViewModel = ViewModelProviders.of(this).get(viewModelClass())
+            mViewModel = ViewModelProviders.of(mActivity!!).get(viewModelClass())
 //            mViewModel.mUserManager = mActivity?.mUserManager
             mViewModel.mActivityNavigator = ActivityNavigator(mActivity, this)
             mLayoutBinding.setVariable(bindingVariable(), mViewModel)

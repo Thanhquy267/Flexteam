@@ -1,25 +1,26 @@
 package com.flexteam.base
+
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.SystemClock
-import com.google.android.material.appbar.AppBarLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.flexteam.utils.Utils
+import com.google.android.material.appbar.AppBarLayout
+import dagger.android.support.DaggerAppCompatActivity
 
 
 @Suppress("DEPRECATION")
 @SuppressLint("Registered")
-abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackChangedListener {
+abstract class BaseActivity : DaggerAppCompatActivity(), FragmentManager.OnBackStackChangedListener {
 
     open val TAG = javaClass.simpleName
 
@@ -32,12 +33,9 @@ abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackCh
 
     protected var mShowFullScreen: Boolean = false
 
+
     protected var mAppBar: AppBarLayout? = null
     protected var mToolbar: Toolbar? = null
-
-    override fun attachBaseContext(base: Context) {
-        Log.d(TAG, "attachBaseContext")
-    }
 
     override fun onStop() {
         hideProgressDialog()
@@ -60,7 +58,7 @@ abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackCh
     }
 
     override fun onBackPressed() {
-        Utils.hideKeyboard(this,this.currentFocus)
+        Utils.hideKeyboard(this, this.currentFocus)
         if (mCurrentFragment is BaseFragment && mCurrentFragment?.doWantToFinishActivity() == true) {
             finish()
             return
@@ -77,12 +75,13 @@ abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackCh
     fun updateCurrentFragment() { // only call in ActivityNavigator
         val fragmentManager = supportFragmentManager
         val fragment: Fragment? = if (fragmentManager.backStackEntryCount > 0) {
-            val fragmentTag = fragmentManager.getBackStackEntryAt(fragmentManager.backStackEntryCount - 1).name
+            val fragmentTag =
+                fragmentManager.getBackStackEntryAt(fragmentManager.backStackEntryCount - 1).name
             fragmentManager.findFragmentByTag(fragmentTag)
         } else {
             try {
                 fragmentManager.fragments[0]
-            }catch (e: IndexOutOfBoundsException){
+            } catch (e: IndexOutOfBoundsException) {
                 null
             }
         }
@@ -154,12 +153,14 @@ abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackCh
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        window.decorView.systemUiVisibility =
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
     }
 
     fun showFragmentAsContent(fragment: Fragment) {
         mFragmentAsContent = fragment
-        supportFragmentManager.beginTransaction().add(android.R.id.content, mFragmentAsContent!!).commit()
+        supportFragmentManager.beginTransaction().add(android.R.id.content, mFragmentAsContent!!)
+            .commit()
     }
 
     fun removeContentFragment() {

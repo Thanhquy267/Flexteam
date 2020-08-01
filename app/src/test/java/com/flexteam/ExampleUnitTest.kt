@@ -1,4 +1,4 @@
-package com.example.flexteam
+package com.flexteam
 
 import org.junit.Test
 
