@@ -2,6 +2,7 @@ package com.flexteam.base
 
 import android.app.Activity
 import android.content.Intent
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.flexteam.R
@@ -136,8 +137,8 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         }
     }
 
-    fun createToastDialog(messageId: Int) {
-//        DialogUtils.showToastDialog(mActivity,mActivity?.getString(messageId))
+    fun showToast(message : String) {
+        Toast.makeText(mActivity?.applicationContext,message,Toast.LENGTH_SHORT).show()
     }
 
 

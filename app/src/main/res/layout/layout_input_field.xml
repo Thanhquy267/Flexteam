@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.flexteam.customview.InputFiledViewModel" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            style="@style/TitleText"
+            tools:text="Email"
+            android:layout_gravity="start"
+            android:text="@{viewModel.MTitle}"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_22sdp"
+            app:hintEnabled="false"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_input"
+                style="@style/NormalText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:hint="Your email"
+                android:hint="@{viewModel.MHint}"
+                android:text="@={viewModel.MContent}"
+                app:addTextChangedListener="@{viewModel.onTextChanged()}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/normal_text"
+            android:layout_marginTop="@dimen/_5sdp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/SmallText"
+            android:layout_gravity="start"
+            tools:text="Email is require"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:textColor="@color/red_66"
+            android:text="@{viewModel.MError}"/>
+    </LinearLayout>
+</layout>
