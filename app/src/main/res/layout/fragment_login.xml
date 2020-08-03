@@ -52,7 +52,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/NormalText"
                 android:layout_gravity="end"
-                android:text="Forgot password"
+                android:text="@string/forgot_password_title"
                 android:paddingBottom="@dimen/_2sdp"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:textColor="@color/colorPrimary" />
@@ -60,7 +60,7 @@
             <Button
                 style="@style/FlexTeam.Button"
                 android:layout_marginTop="@dimen/_30sdp"
-                android:text="Login" />
+                android:text="@string/login_title" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -70,11 +70,11 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/NormalText"
-                    android:text="Don't have account?" />
+                    android:text="@string/don_t_have_account_message" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/NormalText"
-                    android:text="Sign up"
+                    android:text="@string/register_title"
                     android:padding="@dimen/_3sdp"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
@@ -102,7 +102,7 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:text="Or" />
+                    android:text="@string/or_title" />
 
                 <View
                     android:id="@+id/v_end"
@@ -142,7 +142,7 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             style="@style/TitleText"
                             android:layout_marginStart="@dimen/_3sdp"
-                            android:text="Google"
+                            android:text="@string/google_title"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -171,7 +171,7 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             style="@style/TitleText"
                             android:layout_marginStart="@dimen/_3sdp"
-                            android:text="Facebook"
+                            android:text="@string/facebook_title"
                             android:textColor="@color/white"
                             android:textStyle="bold" />
                     </LinearLayout>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FlexTeam</string>
+    <string name="forgot_password_title">Forgot password</string>
+    <string name="login_title">Login</string>
+    <string name="don_t_have_account_message">Don\'t have account?</string>
+    <string name="register_title">Register</string>
+    <string name="or_title">Or</string>
+    <string name="facebook_title">Facebook</string>
+    <string name="google_title">Google</string>
 </resources>
