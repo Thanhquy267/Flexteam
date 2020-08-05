@@ -1,6 +1,9 @@
 package com.flexteam.utils
 
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.databinding.ObservableField
 import com.flexteam.MainApplication
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -41,4 +44,29 @@ object StringUtil {
         val dateTimeFormat = SimpleDateFormat("dd-MM-yyyy / HH:mm", Locale.getDefault())
         return simpleDateFormat.format(dateTimeFormat.parse(dateTime.toString()) as Date)
     }
+
 }// prevent init Util class
+
+
+fun String?.isValidEmail(): Boolean {
+    return if (this?.isNotEmpty() == true) {
+        android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+    } else {
+        false
+    }
+}
+
+fun String?.isMatchPassword(repeatPassword: String?): Boolean {
+    return if (this?.isEmpty() == true || repeatPassword?.isEmpty() == true) {
+        false
+    } else {
+        this == repeatPassword
+    }
+}
+
+fun String?.isValidPassword(): Boolean {
+    if (this == null) return false
+    if (this.isEmpty() || this.isBlank() || this.length < 6) return false
+    return true
+}
+

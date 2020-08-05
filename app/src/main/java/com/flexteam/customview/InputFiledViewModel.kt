@@ -20,13 +20,13 @@ class InputFiledViewModel : BaseObservable() {
     var mContent = ObservableField("")
     var mTextChangeConsumer: Consumer<String>? = null
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun onTextChanged() : TextWatcher{
         return object : TextWatcher{
-            override fun afterTextChanged(s: Editable?) {}
+            override fun afterTextChanged(s: Editable?) {
+                mTextChangeConsumer?.accept(s.toString())
+            }
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                mTextChangeConsumer?.accept(s.toString())
             }
 
         }

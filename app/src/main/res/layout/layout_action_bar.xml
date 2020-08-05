@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.flexteam.customview.ActionBarViewModel" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/bg_action_bar">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_start_icon"
+            style="@style/clickableCard"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_facebook"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:onClick="@{(view) -> viewModel.onStartIconClick(view)}"
+            android:visibility="@{viewModel.MShouldShowStartIcon? View.VISIBLE : View.GONE}"
+            android:layout_marginStart="@dimen/_10sdp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:text="@{viewModel.MTitle}"
+            tools:text="Forgot password"
+            tools:ignore="RelativeOverlap" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_end_icon"
+            style="@style/clickableCard"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            tools:src="@drawable/ic_facebook"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="@{viewModel.MShouldShowEndIcon? View.VISIBLE : View.GONE}"
+            android:onClick="@{(view) -> viewModel.onEndIconClick(view)}"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+    </RelativeLayout>
+</layout>

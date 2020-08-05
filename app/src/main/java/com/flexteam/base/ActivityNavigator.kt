@@ -14,6 +14,15 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         mActivity?.finish()
     }
 
+    fun startActivity(activity : BaseActivity){
+        val intent = Intent(mActivity,activity::class.java)
+        mActivity?.startActivity(intent)
+    }
+
+    fun finishActivity(){
+        mActivity?.finish()
+    }
+
     fun addFragment(
         containerId: Int, fragment: BaseFragment?, shouldAddStack: Boolean,
         enter: Int = R.anim.slide_in_left, exit: Int = R.anim.slide_out_left,

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.flexteam.feature.login.LoginViewModel" />
@@ -11,7 +11,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -52,14 +53,18 @@
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/NormalText"
                 android:layout_gravity="end"
-                android:text="@string/forgot_password_title"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
                 android:paddingBottom="@dimen/_2sdp"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:textColor="@color/colorPrimary" />
+                android:text="@string/forgot_password_title"
+                android:textColor="@color/colorPrimary"
+                android:onClick="@{(view) -> viewModel.onForgotPasswordClick(view)}"/>
 
             <Button
                 style="@style/FlexTeam.Button"
                 android:layout_marginTop="@dimen/_30sdp"
+                android:enabled="@{viewModel.MIsEnableButton}"
                 android:text="@string/login_title" />
 
             <LinearLayout
