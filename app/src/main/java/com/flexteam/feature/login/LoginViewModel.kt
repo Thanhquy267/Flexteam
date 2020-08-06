@@ -1,5 +1,6 @@
 package com.flexteam.feature.login
 
+import com.flexteam.R
 import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.InputFiledViewModel
 import io.reactivex.functions.Consumer
