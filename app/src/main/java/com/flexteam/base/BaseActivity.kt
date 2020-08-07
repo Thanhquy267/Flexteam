@@ -63,10 +63,12 @@ abstract class BaseActivity : AppCompatActivity(), FragmentManager.OnBackStackCh
             finish()
             return
         }
-
         if (supportFragmentManager.backStackEntryCount > 0) {
             supportFragmentManager.popBackStack()
             updateCurrentFragment()
+            return
+        }
+        if (mCurrentFragment?.onBackPress() == true){
             return
         }
         super.onBackPressed()

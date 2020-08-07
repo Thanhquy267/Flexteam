@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.flexteam.feature.chat.chatdetail.ChatDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/white"
+        app:cardElevation="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_back"
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                style="@style/TitleText"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@id/iv_back"
+                android:text="Flexteam"
+                android:textSize="@dimen/_17sdp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_audio"
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_toStartOf="@id/iv_video"
+                android:rotation="90"
+                android:src="@drawable/ic_audio_call"
+                android:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_video"
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_toStartOf="@id/iv_more"
+                android:src="@drawable/ic_video_call"
+                android:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_more"
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_more"
+                android:tint="@color/colorPrimary" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cv_action_bar"
+        android:layout_above="@id/rl_input_message"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_input_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:elevation="1dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_more"
+            style="@style/clickableCard"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="1dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_more_action"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_add"
+                android:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_chat"
+            style="@style/NormalText"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_toStartOf="@id/iv_send"
+            android:layout_toEndOf="@id/cv_more"
+            android:background="@drawable/bg_input_chat"
+            android:hint="Write your message..."
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="0dp"
+            android:text="@={viewModel.MMessage}"
+            android:textColor="@color/normal_text" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_send"
+            style="@style/clickableCard"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_send"
+            android:onClick="@{(view) -> viewModel.onSendClick(view)}"
+            android:tint="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_more_menu"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_attach"
+                android:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_video"
+                android:padding="@dimen/_1sdp"
+                android:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_image"
+                style="@style/clickableCard"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_33sdp"
+                android:src="@drawable/ic_picture"
+                android:padding="@dimen/_1sdp"
+                android:tint="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+        <View
+            android:id="@+id/v_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_bottom_sheet_shadow"
+            app:layout_anchor="@id/layout_select_image"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/layout_select_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_select_image_bottom_sheet"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_done"
+            style="@style/FlexTeam.Button"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            android:text="Done" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -2,11 +2,13 @@ package com.flexteam.feature
 
 import com.flexteam.R
 import com.flexteam.base.BaseViewModel
+import com.flexteam.feature.chat.ChatListFragment
+import com.flexteam.feature.chat.chatdetail.ChatDetailFragment
 import com.flexteam.feature.login.LoginFragment
 
 class AuthViewModel : BaseViewModel() {
     override fun onReady() {
         super.onReady()
-        mActivityNavigator?.addFragment(R.id.fl_root, LoginFragment(),false)
+        mActivityNavigator?.addFragment(R.id.fl_root, ChatDetailFragment(),false)
     }
 }

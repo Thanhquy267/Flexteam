@@ -17,4 +17,8 @@ abstract class BaseFragment : Fragment() {
         return false
     }
 
+    open fun onBackPress() : Boolean{
+        return false
+    }
+
 }

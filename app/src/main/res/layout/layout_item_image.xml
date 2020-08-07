@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/_4sdp"
+            android:scaleType="centerCrop"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_count"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerInParent="true"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardElevation="0dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_count"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                tools:text="1"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</layout>
