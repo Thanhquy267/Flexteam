@@ -2,6 +2,8 @@ package com.flexteam
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import com.flexteam.binding.AppDataBindingComponent
 import com.flexteam.utils.Constant
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -20,6 +22,7 @@ class MainApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        DataBindingUtil.setDefaultComponent(AppDataBindingComponent())
         mInstance = this
         initRealm()
         initActivityLifeCycle()
