@@ -3,8 +3,21 @@
     <string name="forgot_password_title">Forgot password</string>
     <string name="login_title">Login</string>
     <string name="don_t_have_account_message">Don\'t have account?</string>
+    <string name="first_name_title">First Name</string>
+    <string name="last_name_title">Last Name</string>
+    <string name="email_title">Email</string>
+    <string name="phone_number_title">Phone Number</string>
+    <string name="confirm_password_title">Confirm password</string>
     <string name="register_title">Register</string>
     <string name="or_title">Or</string>
     <string name="facebook_title">Facebook</string>
     <string name="google_title">Google</string>
+    <string name="password_title">Password</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="first_name_hint">Your first name</string>
+    <string name="last_name_hint">Your last name</string>
+    <string name="email_hint">Your Email</string>
+    <string name="phone_number_hint">Your phone number</string>
+    <string name="password_hint">Your password</string>
+    <string name="confirm_password_hint">Confirm your password</string>
 </resources>
