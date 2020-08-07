@@ -1,11 +1,9 @@
-package com.flexteam.feature.chat.chatdetail
+package com.flexteam.feature.home.chat.chatdetail
 
 import android.animation.ValueAnimator
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
-import android.util.Log
-import android.view.KeyEvent
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator

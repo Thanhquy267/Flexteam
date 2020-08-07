@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.flexteam.feature.login.LoginViewModel" />
+            type="com.flexteam.feature.auth.login.LoginViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -65,6 +65,7 @@
                 style="@style/FlexTeam.Button"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:enabled="@{viewModel.MIsEnableButton}"
+                android:onClick="@{(view) -> viewModel.onLoginClick(view)}"
                 android:text="@string/login_title" />
 
             <LinearLayout
@@ -81,6 +82,7 @@
                     style="@style/NormalText"
                     android:text="@string/register_title"
                     android:padding="@dimen/_3sdp"
+                    android:onClick="@{(view) -> viewModel.onRegisterClick(view)}"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 

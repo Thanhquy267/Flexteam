@@ -14,9 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/layout_action_bar"
+            layout="@layout/layout_action_bar"/>
+
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/layout_action_bar"
             android:layout_above="@id/rl_bottom_navigation" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -29,6 +34,7 @@
             android:src="@drawable/ic_profile"
             android:tint="@color/white"
             app:elevation="1dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -41,6 +47,7 @@
             android:src="@drawable/ic_audiotrack_dark"
             android:tint="@color/white"
             app:elevation="1dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,6 +60,7 @@
             android:src="@drawable/ic_checked_checkbox"
             android:tint="@color/white"
             app:elevation="1dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -65,6 +73,7 @@
             android:src="@drawable/ic_google"
             android:tint="@color/white"
             app:elevation="1dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -77,6 +86,7 @@
             android:src="@drawable/ic_vol_mute"
             android:tint="@color/white"
             app:elevation="1dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -89,6 +99,7 @@
             android:src="@drawable/ic_plus"
             android:tint="@color/white"
             app:elevation="2dp"
+            app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@dimen/_40sdp"
             tools:visibility="gone" />
 
@@ -116,7 +127,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
-                        app:srcCompat="@drawable/ic_chat" />
+                        app:srcCompat="@drawable/ic_chat"
+                        android:tint="@color/normal_text" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         style="@style/clickableCard"
@@ -124,7 +136,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
-                        app:srcCompat="@drawable/ic_task_list" />
+                        app:srcCompat="@drawable/ic_task_list"
+                        android:tint="@color/normal_text"/>
 
                     <View
                         android:layout_width="0dp"
@@ -137,7 +150,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
-                        app:srcCompat="@drawable/ic_group_people" />
+                        app:srcCompat="@drawable/ic_group_people"
+                        android:tint="@color/normal_text"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
                         style="@style/clickableCard"
@@ -145,7 +159,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
-                        app:srcCompat="@drawable/ic_profile" />
+                        app:srcCompat="@drawable/ic_profile"
+                        android:tint="@color/normal_text" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

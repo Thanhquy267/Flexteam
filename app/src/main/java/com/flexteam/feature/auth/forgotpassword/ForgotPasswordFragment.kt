@@ -1,4 +1,4 @@
-package com.flexteam.feature.forgotpassword
+package com.flexteam.feature.auth.forgotpassword
 
 import com.flexteam.BR
 import com.flexteam.R

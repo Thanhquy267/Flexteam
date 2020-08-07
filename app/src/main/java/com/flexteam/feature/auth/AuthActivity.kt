@@ -1,10 +1,10 @@
-package com.flexteam.feature
+package com.flexteam.feature.auth
 
 import com.flexteam.BR
 import com.flexteam.R
 import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.databinding.ActivityAuthBinding
-import com.flexteam.feature.register.RegisterFragment
+import com.flexteam.feature.auth.login.LoginFragment
 
 class AuthActivity : BaseBindingModelActivity<ActivityAuthBinding, AuthViewModel>() {
     override fun layoutId(): Int = R.layout.activity_auth
@@ -13,6 +13,6 @@ class AuthActivity : BaseBindingModelActivity<ActivityAuthBinding, AuthViewModel
 
     override fun setupView() {
         super.setupView()
-        mViewModel.mActivityNavigator?.addFragment(R.id.fl_root, RegisterFragment(), false)
+        mViewModel.mActivityNavigator?.addFragment(R.id.fl_root, LoginFragment(), false)
     }
 }

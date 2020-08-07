@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.flexteam.feature.forgotpassword.verify.VerifyViewModel" />
+            type="com.flexteam.feature.auth.forgotpassword.verify.VerifyViewModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

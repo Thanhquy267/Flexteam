@@ -1,4 +1,4 @@
-package com.flexteam.feature.register
+package com.flexteam.feature.auth.register
 
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod

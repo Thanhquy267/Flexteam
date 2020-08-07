@@ -1,7 +1,5 @@
-package com.flexteam.feature.register
+package com.flexteam.feature.auth.register
 
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Patterns
 import androidx.databinding.ObservableField
 import com.flexteam.R

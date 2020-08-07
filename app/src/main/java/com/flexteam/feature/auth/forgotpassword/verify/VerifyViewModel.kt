@@ -1,15 +1,10 @@
-package com.flexteam.feature.forgotpassword.verify
+package com.flexteam.feature.auth.forgotpassword.verify
 
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import androidx.databinding.ObservableField
-import com.flexteam.R
 import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.ActionBarViewModel
 import com.flexteam.utils.Utils
-import com.flexteam.utils.isValidEmail
-import com.flexteam.utils.isValidPassword
 import io.reactivex.functions.Consumer
 
 class VerifyViewModel : BaseViewModel() {

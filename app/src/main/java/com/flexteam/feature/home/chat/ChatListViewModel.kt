@@ -1,4 +1,4 @@
-package com.flexteam.feature.chat
+package com.flexteam.feature.home.chat
 
 import com.flexteam.adapter.ChatListAdapter
 import com.flexteam.base.BaseViewModel

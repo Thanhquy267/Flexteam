@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.flexteam.feature.register.RegisterViewModel" />
+            type="com.flexteam.feature.auth.register.RegisterViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView

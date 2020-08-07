@@ -1,4 +1,4 @@
-package com.flexteam.feature.forgotpassword
+package com.flexteam.feature.auth.forgotpassword
 
 import android.os.Build
 import android.view.View
@@ -8,7 +8,7 @@ import com.flexteam.R
 import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.ActionBarViewModel
 import com.flexteam.customview.InputFiledViewModel
-import com.flexteam.feature.forgotpassword.verify.VerifyFragment
+import com.flexteam.feature.auth.forgotpassword.verify.VerifyFragment
 import com.flexteam.utils.Utils
 import com.flexteam.utils.isValidEmail
 import io.reactivex.functions.Consumer

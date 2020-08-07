@@ -1,4 +1,4 @@
-package com.flexteam.feature.chat
+package com.flexteam.feature.home.chat
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.flexteam.BR

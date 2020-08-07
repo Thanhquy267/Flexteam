@@ -1,4 +1,4 @@
-package com.flexteam.feature.login
+package com.flexteam.feature.auth.login
 
 import android.text.InputType
 import com.flexteam.BR

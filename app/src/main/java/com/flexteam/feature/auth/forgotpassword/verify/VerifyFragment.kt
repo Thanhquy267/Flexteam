@@ -1,4 +1,4 @@
-package com.flexteam.feature.forgotpassword.verify
+package com.flexteam.feature.auth.forgotpassword.verify
 
 import android.text.Editable
 import android.text.TextWatcher

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.flexteam.feature.AuthViewModel"/>
+            type="com.flexteam.feature.auth.AuthViewModel"/>
     </data>
 
     <FrameLayout

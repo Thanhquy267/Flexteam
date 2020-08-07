@@ -1,12 +1,13 @@
-package com.flexteam.feature.login
+package com.flexteam.feature.auth.login
 
 import android.view.View
 import androidx.databinding.ObservableField
 import com.flexteam.R
 import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.InputFiledViewModel
-import com.flexteam.feature.forgotpassword.ForgotPasswordActivity
-import com.flexteam.feature.forgotpassword.ForgotPasswordFragment
+import com.flexteam.feature.auth.forgotpassword.ForgotPasswordActivity
+import com.flexteam.feature.home.HomeActivity
+import com.flexteam.feature.auth.register.RegisterFragment
 import com.flexteam.utils.Utils
 import com.flexteam.utils.isValidEmail
 import com.flexteam.utils.isValidPassword
@@ -59,8 +60,19 @@ class LoginViewModel : BaseViewModel() {
         mIsEnableButton.set(password?.isNotEmpty() == true && password.isValidPassword())
     }
 
+    fun onLoginClick(view : View){
+        Utils.hideKeyboard(view.context,view)
+        mActivityNavigator?.startActivity(HomeActivity())
+    }
+
     fun onForgotPasswordClick(view : View){
         Utils.hideKeyboard(view.context,view)
         mActivityNavigator?.startActivity(ForgotPasswordActivity())
+    }
+
+
+    fun onRegisterClick(view : View){
+        Utils.hideKeyboard(view.context,view)
+        mActivityNavigator?.addFragment(R.id.fl_root, RegisterFragment(), true)
     }
 }

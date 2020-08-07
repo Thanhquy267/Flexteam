@@ -1,11 +1,10 @@
-package com.flexteam.feature.forgotpassword
+package com.flexteam.feature.auth.forgotpassword
 
 import com.flexteam.BR
 import com.flexteam.R
 import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.base.BaseViewModel
 import com.flexteam.databinding.ActivityForgotPasswordBinding
-import com.flexteam.feature.AuthViewModel
 
 class ForgotPasswordActivity : BaseBindingModelActivity<ActivityForgotPasswordBinding,BaseViewModel>() {
     override fun layoutId(): Int = R.layout.activity_forgot_password

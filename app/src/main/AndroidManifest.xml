@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".feature.AuthActivity"
+            android:name=".feature.auth.AuthActivity"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.forgotpassword.ForgotPasswordActivity"
+            android:name="com.flexteam.feature.auth.forgotpassword.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
     </application>
 

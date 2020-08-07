@@ -1,4 +1,4 @@
-package com.flexteam.feature.chat.chatdetail
+package com.flexteam.feature.home.chat.chatdetail
 
 import android.view.View
 import androidx.databinding.ObservableField
