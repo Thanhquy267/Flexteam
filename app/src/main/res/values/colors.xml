@@ -13,4 +13,10 @@
     <color name="blue_98">#3b5998</color>
     <color name="red_66">#ff6666</color>
     <color name="grey_b7">#B7B7B7</color>
+
+    <color name="bg_grey">#E4E2E2</color>
+    <color name="available">#4DFF4D</color>
+    <color name="busy">#E74645</color>
+
+
 </resources>
