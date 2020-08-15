@@ -40,7 +40,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.4dp"
-            android:background="@color/normal_text"
+            android:background="@color/normalText"
             android:layout_marginTop="@dimen/_5sdp"/>
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/SmallText"

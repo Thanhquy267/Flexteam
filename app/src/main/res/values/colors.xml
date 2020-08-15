@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#0E71B5</color>
     <color name="colorAccent">#28c9f7</color>
 
-    <color name="title_text">#2c2c2c</color>
-    <color name="normal_text">#909090</color>
+    <color name="titleText">#2c2c2c</color>
+    <color name="normalText">#909090</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="colorGrey">#666666</color>
@@ -13,4 +13,8 @@
     <color name="blue_98">#3b5998</color>
     <color name="red_66">#ff6666</color>
     <color name="grey_b7">#B7B7B7</color>
+    <color name="green_09">#22B609</color>
+    <color name="grey_3d">#3D3D3D</color>
+    <color name="grey_f5">#F5F5F5</color>
+    <color name="transparent">#00000000</color>
 </resources>

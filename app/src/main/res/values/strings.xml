@@ -20,4 +20,9 @@
     <string name="phone_number_hint">Your phone number</string>
     <string name="password_hint">Your password</string>
     <string name="confirm_password_hint">Confirm your password</string>
+    <string name="chat_title">Chat</string>
+    <string name="task_title">Task</string>
+    <string name="schedule_title">Schedule</string>
+    <string name="team_list_title">Team list</string>
+    <string name="project_title">Project</string>
 </resources>

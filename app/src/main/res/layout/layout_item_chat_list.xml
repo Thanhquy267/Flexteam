@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
+        android:id="@+id/rl_root"
         style="@style/clickableCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +38,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_name"
                 style="@style/TitleText"
-                android:textColor="@color/title_text"
+                android:textColor="@color/titleText"
                 tools:text="Flexteam" />
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -58,8 +58,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:layout_toStartOf="@id/iv_video"
-                android:rotation="90"
-                android:src="@drawable/ic_audio_call"
+                android:src="@drawable/ic_phone"
                 android:tint="@color/colorPrimary" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -139,7 +138,7 @@
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="0dp"
             android:text="@={viewModel.MMessage}"
-            android:textColor="@color/normal_text" />
+            android:textColor="@color/normalText" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_send"

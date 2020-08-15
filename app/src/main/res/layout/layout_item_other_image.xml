@@ -41,7 +41,7 @@
                     android:id="@+id/cv_one_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/normal_text"
+                    app:cardBackgroundColor="@color/normalText"
                     app:cardCornerRadius="@dimen/_10sdp"
                     android:visibility="gone">
                     <androidx.appcompat.widget.AppCompatImageView
@@ -60,7 +60,7 @@
                         android:id="@+id/cv_image_1_2"
                         android:layout_width="@dimen/_115sdp"
                         android:layout_height="@dimen/_115sdp"
-                        app:cardBackgroundColor="@color/normal_text"
+                        app:cardBackgroundColor="@color/normalText"
                         app:cardCornerRadius="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_1sdp"
                         android:visibility="visible">
@@ -75,7 +75,7 @@
                         android:id="@+id/cv_image_2_2"
                         android:layout_width="@dimen/_115sdp"
                         android:layout_height="@dimen/_115sdp"
-                        app:cardBackgroundColor="@color/normal_text"
+                        app:cardBackgroundColor="@color/normalText"
                         app:cardCornerRadius="@dimen/_10sdp"
                         android:visibility="visible">
                         <androidx.appcompat.widget.AppCompatImageView
@@ -97,7 +97,7 @@
                         android:id="@+id/cv_image_1_3"
                         android:layout_width="@dimen/_76sdp"
                         android:layout_height="@dimen/_76sdp"
-                        app:cardBackgroundColor="@color/normal_text"
+                        app:cardBackgroundColor="@color/normalText"
                         app:cardCornerRadius="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_1sdp"
                         android:visibility="visible">
@@ -112,7 +112,7 @@
                         android:id="@+id/cv_image_2_3"
                         android:layout_width="@dimen/_76sdp"
                         android:layout_height="@dimen/_76sdp"
-                        app:cardBackgroundColor="@color/normal_text"
+                        app:cardBackgroundColor="@color/normalText"
                         app:cardCornerRadius="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_1sdp"
                         android:visibility="visible">
@@ -127,7 +127,7 @@
                         android:id="@+id/cv_image_3_3"
                         android:layout_width="@dimen/_76sdp"
                         android:layout_height="@dimen/_76sdp"
-                        app:cardBackgroundColor="@color/normal_text"
+                        app:cardBackgroundColor="@color/normalText"
                         app:cardCornerRadius="@dimen/_10sdp"
                         android:visibility="visible">
                         <androidx.appcompat.widget.AppCompatImageView

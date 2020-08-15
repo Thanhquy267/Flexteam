@@ -11,6 +11,7 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/rl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,6 +20,7 @@
             layout="@layout/layout_action_bar"/>
 
         <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/layout_action_bar"
@@ -122,22 +124,24 @@
                     android:weightSum="5">
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_tab_chat"
                         style="@style/clickableCard"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
                         app:srcCompat="@drawable/ic_chat"
-                        android:tint="@color/normal_text" />
+                        android:tint="@color/normalText" />
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_project"
                         style="@style/clickableCard"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
                         app:srcCompat="@drawable/ic_task_list"
-                        android:tint="@color/normal_text"/>
+                        android:tint="@color/normalText"/>
 
                     <View
                         android:layout_width="0dp"
@@ -145,22 +149,24 @@
                         android:layout_weight="1" />
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_tab_schedule"
                         style="@style/clickableCard"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
                         app:srcCompat="@drawable/ic_group_people"
-                        android:tint="@color/normal_text"/>
+                        android:tint="@color/normalText"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_tab_team_list"
                         style="@style/clickableCard"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
                         app:srcCompat="@drawable/ic_profile"
-                        android:tint="@color/normal_text" />
+                        android:tint="@color/normalText" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

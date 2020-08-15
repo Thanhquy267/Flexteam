@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/rl_root"
+        style="@style/clickableCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_status"
+                    android:layout_width="@dimen/_8sdp"
+                    android:layout_height="@dimen/_8sdp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/grey_3d"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_status"
+                    style="@style/TitleText"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="Finish"
+                    android:textColor="@color/grey_3d"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ll_status"
+                android:layout_toStartOf="@id/cv_avatar"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    style="@style/TitleText"
+                    android:textColor="@color/titleText"
+                    tools:text="Login/Register Screen" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_description"
+                    style="@style/NormalText"
+                    tools:text="Handle UI/Logic/API" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_avatar"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardBackgroundColor="@color/red_66"
+                app:cardCornerRadius="@dimen/_12sdp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/normalText"
+            android:layout_marginTop="@dimen/_10sdp"/>
+    </LinearLayout>
+</layout>

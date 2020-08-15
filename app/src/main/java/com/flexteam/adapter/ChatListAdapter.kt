@@ -8,9 +8,14 @@ import com.flexteam.R
 import com.flexteam.databinding.LayoutItemChatListBinding
 import com.flexteam.model.ChatListModel
 
-class ChatListAdapter(private val listChat : ArrayList<ChatListModel>) : RecyclerView.Adapter<ChatListViewHolder>(){
+interface OnChatClickListener {
+    fun onChatClicked(item: ChatListModel?)
+}
+
+class ChatListAdapter(private val listChat: ArrayList<ChatListModel>, val listener: OnChatClickListener) : RecyclerView.Adapter<ChatListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatListViewHolder {
-        return ChatListViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.layout_item_chat_list,parent,false))
+        return ChatListViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+                R.layout.layout_item_chat_list, parent, false), listener)
     }
 
     override fun getItemCount(): Int {
@@ -18,15 +23,18 @@ class ChatListAdapter(private val listChat : ArrayList<ChatListModel>) : Recycle
     }
 
     override fun onBindViewHolder(holder: ChatListViewHolder, position: Int) {
-       holder.bind(listChat[position])
+        holder.bind(listChat[position])
     }
 
 }
 
-class ChatListViewHolder(private val binder : LayoutItemChatListBinding) : RecyclerView.ViewHolder(binder.root){
-    fun bind(item : ChatListModel?){
-         binder.tvName.text = item?.title
-         binder.tvLastMessage.text = item?.lastMessage
+class ChatListViewHolder(private val binder: LayoutItemChatListBinding, val listener: OnChatClickListener) : RecyclerView.ViewHolder(binder.root) {
+    fun bind(item: ChatListModel?) {
+        binder.tvName.text = item?.title
+        binder.tvLastMessage.text = item?.lastMessage
         binder.tvTime.text = item?.time
+        binder.rlRoot.setOnClickListener {
+            listener.onChatClicked(item)
+        }
     }
 }

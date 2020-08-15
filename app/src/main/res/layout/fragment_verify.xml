@@ -23,7 +23,7 @@
             android:layout_marginEnd="@dimen/_15sdp">
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TitleText"
-                android:textColor="@color/normal_text"
+                android:textColor="@color/normalText"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Just 1 more step to reset your password, please check your email to get reset code" />
            <LinearLayout
@@ -52,12 +52,12 @@
                        android:paddingEnd="@dimen/_5sdp"
                        android:text="@={viewModel.MFirst}"
                        android:cursorVisible="true"
-                       android:textColor="@color/normal_text"
+                       android:textColor="@color/normalText"
                        android:inputType="number"/>
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="0.4dp"
-                       android:background="@color/normal_text"
+                       android:background="@color/normalText"
                        android:layout_marginTop="@dimen/_3sdp"/>
                </LinearLayout>
                <LinearLayout
@@ -81,12 +81,12 @@
                        android:paddingEnd="@dimen/_5sdp"
                        android:text="@={viewModel.MSecond}"
                        android:cursorVisible="true"
-                       android:textColor="@color/normal_text"
+                       android:textColor="@color/normalText"
                        android:inputType="number"/>
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="0.4dp"
-                       android:background="@color/normal_text"
+                       android:background="@color/normalText"
                        android:layout_marginTop="@dimen/_3sdp"/>
                </LinearLayout>
                <LinearLayout
@@ -110,12 +110,12 @@
                        android:paddingEnd="@dimen/_5sdp"
                        android:text="@={viewModel.MThird}"
                        android:cursorVisible="true"
-                       android:textColor="@color/normal_text"
+                       android:textColor="@color/normalText"
                        android:inputType="number"/>
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="0.4dp"
-                       android:background="@color/normal_text"
+                       android:background="@color/normalText"
                        android:layout_marginTop="@dimen/_3sdp"/>
                </LinearLayout>
                <LinearLayout
@@ -139,12 +139,12 @@
                        android:maxLength="1"
                        android:text="@={viewModel.MFourth}"
                        android:cursorVisible="true"
-                       android:textColor="@color/normal_text"
+                       android:textColor="@color/normalText"
                        android:inputType="number"/>
                    <View
                        android:layout_width="match_parent"
                        android:layout_height="0.4dp"
-                       android:background="@color/normal_text"
+                       android:background="@color/normalText"
                        android:layout_marginTop="@dimen/_3sdp"/>
                </LinearLayout>
            </LinearLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+ <include
+     layout="@layout/layout_action_bar"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <View
+           android:id="@+id/v_bg_header"
+           android:layout_width="wrap_content"
+           android:layout_height="@dimen/_110sdp"
+           android:background="@drawable/bg_profile"/>
+
+       <androidx.cardview.widget.CardView
+           style="@style/clickableCard"
+           android:layout_width="@dimen/_30sdp"
+           android:layout_height="@dimen/_30sdp"
+           android:layout_toStartOf="@id/cv_call"
+           android:layout_marginTop="@dimen/_30sdp"
+           android:layout_marginEnd="@dimen/_10sdp"
+           app:cardBackgroundColor="@color/white"
+           app:cardCornerRadius="@dimen/_15sdp"
+           app:cardElevation="0dp">
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:layout_width="@dimen/_20sdp"
+               android:layout_height="@dimen/_20sdp"
+               android:layout_gravity="center"
+               android:src="@drawable/ic_phone"
+               android:tint="@color/colorPrimary" />
+       </androidx.cardview.widget.CardView>
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/cv_call"
+           style="@style/clickableCard"
+           android:layout_width="@dimen/_30sdp"
+           android:layout_height="@dimen/_30sdp"
+           android:layout_alignParentEnd="true"
+           android:layout_marginEnd="@dimen/_50sdp"
+           android:layout_marginTop="@dimen/_15sdp"
+           app:cardBackgroundColor="@color/white"
+           app:cardCornerRadius="@dimen/_15sdp"
+           app:cardElevation="0dp">
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/iv_call"
+               android:layout_width="@dimen/_20sdp"
+               android:layout_height="@dimen/_20sdp"
+               android:layout_gravity="center"
+               android:src="@drawable/ic_chat"
+               android:tint="@color/colorPrimary" />
+       </androidx.cardview.widget.CardView>
+
+       <androidx.cardview.widget.CardView
+           style="@style/clickableCard"
+           android:layout_width="@dimen/_30sdp"
+           android:layout_height="@dimen/_30sdp"
+           android:layout_alignParentEnd="true"
+           android:layout_marginEnd="@dimen/_10sdp"
+           android:layout_marginTop="@dimen/_30sdp"
+           app:cardBackgroundColor="@color/white"
+           app:cardCornerRadius="@dimen/_15sdp"
+           app:cardElevation="0dp">
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:layout_width="@dimen/_20sdp"
+               android:layout_height="@dimen/_20sdp"
+               android:layout_gravity="center"
+               android:src="@drawable/ic_mail"
+               android:tint="@color/colorPrimary" />
+       </androidx.cardview.widget.CardView>
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/cv_avatar"
+           android:layout_width="@dimen/_70sdp"
+           android:layout_height="@dimen/_70sdp"
+           app:cardBackgroundColor="@color/red_66"
+           app:cardCornerRadius="@dimen/_35sdp"
+           android:layout_alignParentEnd="true"
+           android:layout_marginTop="@dimen/_55sdp"
+           android:layout_marginEnd="@dimen/_30sdp"
+           app:cardElevation="0dp">
+
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/iv_avatar"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent" />
+       </androidx.cardview.widget.CardView>
+
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tv_name"
+           style="@style/TitleText"
+           android:text="Thanh Quý"
+           android:textSize="@dimen/_16sdp"
+           android:textStyle="bold"
+           android:layout_marginStart="@dimen/_15sdp"
+           android:textColor="@color/white"/>
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/tv_name"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginStart="@dimen/_15sdp">
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal">
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/NormalText"
+                      android:text="32"
+                      android:textColor="@color/white"/>
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/SmallText"
+                      android:textAlignment="center"
+                      android:text="Tasks"
+                      android:textColor="@color/white"/>
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal"
+                  android:layout_marginStart="@dimen/_15sdp">
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/NormalText"
+                      android:text="124 (h)"
+                      android:textColor="@color/white"/>
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/SmallText"
+                      android:textAlignment="center"
+                      android:text="Times"
+                      android:textColor="@color/white"/>
+              </LinearLayout>
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal"
+                  android:layout_marginStart="@dimen/_15sdp">
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/NormalText"
+                      android:text="3 (h)"
+                      android:textColor="@color/white"/>
+                  <androidx.appcompat.widget.AppCompatTextView
+                      style="@style/SmallText"
+                      android:textAlignment="center"
+                      android:text="Miss"
+                      android:textColor="@color/white"/>
+              </LinearLayout>
+          </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@id/v_bg_header"
+           android:layout_marginStart="@dimen/_15sdp"
+           android:layout_marginTop="@dimen/_10sdp"
+           android:orientation="vertical">
+          <androidx.appcompat.widget.AppCompatTextView
+              style="@style/TitleText"
+              android:text="Information"
+              android:textColor="@color/titleText"/>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:gravity="center_vertical">
+
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:src="@drawable/ic_mail"
+                   android:tint="@color/normalText"/>
+
+               <androidx.appcompat.widget.AppCompatTextView
+                   style="@style/TitleText"
+                   android:text="quythanh24@gmail.com"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@color/normalText"
+                   android:dr="90"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:gravity="center_vertical">
+
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:src="@drawable/ic_phone"
+                   android:tint="@color/normalText" />
+               <androidx.appcompat.widget.AppCompatTextView
+                   style="@style/TitleText"
+                   android:text="0967147057"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@color/normalText"
+                   android:dr="90"/>
+           </LinearLayout>
+           <androidx.appcompat.widget.AppCompatTextView
+               style="@style/TitleText"
+               android:text="Bank"
+               android:textColor="@color/titleText"
+               android:layout_marginTop="@dimen/_10sdp"/>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:gravity="center_vertical">
+
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:src="@drawable/ic_credit_card"
+                   android:tint="@color/normalText" />
+               <androidx.appcompat.widget.AppCompatTextView
+                   style="@style/TitleText"
+                   android:text="Le Thanh Quy"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@color/normalText"
+                   android:dr="90"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:gravity="center_vertical">
+
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:src="@drawable/ic_bank"
+                   android:tint="@color/normalText"/>
+               <androidx.appcompat.widget.AppCompatTextView
+                   style="@style/TitleText"
+                   android:text="Techcombank"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@color/normalText"
+                   android:dr="90"/>
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_10sdp"
+               android:gravity="center_vertical">
+
+               <androidx.appcompat.widget.AppCompatImageView
+                   android:layout_width="@dimen/_20sdp"
+                   android:layout_height="@dimen/_20sdp"
+                   android:src="@drawable/ic_wallet"
+                   android:tint="@color/normalText" />
+               <androidx.appcompat.widget.AppCompatTextView
+                   style="@style/TitleText"
+                   android:text="123456789"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:textColor="@color/normalText"
+                   android:dr="90"/>
+           </LinearLayout>
+       </LinearLayout>
+   </RelativeLayout>
+
+</LinearLayout>
