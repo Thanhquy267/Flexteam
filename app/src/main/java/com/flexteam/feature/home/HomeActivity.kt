@@ -1,16 +1,21 @@
 package com.flexteam.feature.home
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.animation.OvershootInterpolator
 import androidx.core.view.ViewCompat
 import com.flexteam.BR
 import com.flexteam.R
 import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.databinding.ActivityHomeBinding
+import com.flexteam.feature.home.container.ContainerActivity
+import com.flexteam.type.ContainerType
 import com.flexteam.utils.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel>() {
     private var mIsFabClicked = false
+    private val TYPE_EXTRA = "TYPE_EXTRA"
 
     override fun layoutId(): Int = R.layout.activity_home
     override fun viewModelClass(): Class<HomeViewModel> = HomeViewModel::class.java
@@ -30,7 +35,10 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
                 rotateFabBackward()
         }
         mLayoutBinding.fab1.setOnClickListener {
-            Utils.showToast("fab1 clicked!!!!")
+            val intent = Intent(this, ContainerActivity::class.java)
+            val bundle = ContainerActivity.createDataBundle(ContainerType.NOTIFICATION.value)
+            intent.putExtras(bundle)
+            mViewModel.mActivityNavigator?.mActivity?.startActivity(intent)
         }
     }
 

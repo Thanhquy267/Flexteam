@@ -21,8 +21,7 @@
         <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/layout_action_bar"
-            android:layout_above="@id/rl_bottom_navigation" />
+            android:layout_below="@id/layout_action_bar" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_1"
