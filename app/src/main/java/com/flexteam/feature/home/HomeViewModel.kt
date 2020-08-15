@@ -5,11 +5,12 @@ import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.ActionBarViewModel
 import com.flexteam.utils.StringUtil
 
-class HomeViewModel: BaseViewModel() {
+class HomeViewModel : BaseViewModel() {
     val mActionBarViewModel = ActionBarViewModel()
 
     override fun onReady() {
         super.onReady()
         mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.chat_title))
+        mActionBarViewModel.mShouldShowStartIcon.set(true)
     }
 }

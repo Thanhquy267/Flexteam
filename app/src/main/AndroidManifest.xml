@@ -38,6 +38,7 @@
             android:name="com.flexteam.feature.auth.forgotpassword.ForgotPasswordActivity"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
         <activity android:name=".feature.home.chat.chatdetail.ChatDetailActivity" />
+        <activity android:name=".feature.home.container.ContainerActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.flexteam.feature.home
 
+import android.content.Intent
 import android.view.animation.OvershootInterpolator
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -10,11 +11,14 @@ import com.flexteam.adapter.MainViewPagerAdapter
 import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.databinding.ActivityHomeBinding
 import com.flexteam.feature.home.chat.ChatListFragment
+import com.flexteam.feature.home.container.ContainerActivity
 import com.flexteam.feature.home.project.ProjectFragment
 import com.flexteam.feature.home.schedule.ScheduleFragment
+import com.flexteam.type.ContainerType
 import com.flexteam.utils.StringUtil
 import com.flexteam.utils.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import io.reactivex.functions.Consumer
 
 class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel>() {
 
@@ -83,6 +87,12 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
                 mLayoutBinding.ivTabTeamList.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
                 //
                 mViewModel.mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.chat_title))
+                mViewModel.mActionBarViewModel.mStartIconClickConsumer = Consumer {
+                    val intent = Intent(this, ContainerActivity::class.java)
+                    val bundle = ContainerActivity.createDataBundle(ContainerType.NOTIFICATION.value)
+                    intent.putExtras(bundle)
+                    mViewModel.mActivityNavigator?.mActivity?.startActivity(intent)
+                }
             }
             TabType.TabProject.value -> {
                 mLayoutBinding.ivTabChat.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
