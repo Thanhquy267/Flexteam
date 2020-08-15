@@ -5,4 +5,6 @@ object Constant {
     const val REALM_DB_NAME = "MajorComplex.realm"
     const val REALM_SCHEMA_VERSION = 1L
 
+    const val DAY_OF_WEEK_FULL_FORMAT = "EEE dd-MM-YYYY"
+
 }

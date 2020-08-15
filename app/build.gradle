@@ -84,6 +84,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 
+    //Drag selection recyclerview
+    implementation 'com.github.MFlisar:DragSelectRecyclerView:0.3'
     // Dagger
 //    implementation "com.google.dagger:dagger-android:2.16"
 //    implementation "com.google.dagger:dagger-android-support:2.16"

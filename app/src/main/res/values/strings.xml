@@ -25,4 +25,11 @@
     <string name="schedule_title">Schedule</string>
     <string name="team_list_title">Team list</string>
     <string name="project_title">Project</string>
+    <string name="today_txt">Today</string>
+    <string name="update">Update</string>
+
+    //Available type
+    <string name="available_type_available">Available</string>
+    <string name="available_type_busy">Busy</string>
+    <string name="available_type_not_provided">Not provided</string>
 </resources>

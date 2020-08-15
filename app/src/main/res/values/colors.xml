@@ -16,5 +16,8 @@
     <color name="green_09">#22B609</color>
     <color name="grey_3d">#3D3D3D</color>
     <color name="grey_f5">#F5F5F5</color>
+    <color name="bg_grey">#E4E2E2</color>
+    <color name="available">#4DFF4D</color>
+    <color name="busy">#E74645</color>
     <color name="transparent">#00000000</color>
 </resources>

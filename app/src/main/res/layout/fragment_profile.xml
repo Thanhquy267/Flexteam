@@ -182,8 +182,7 @@
                    style="@style/TitleText"
                    android:text="quythanh24@gmail.com"
                    android:layout_marginStart="@dimen/_10sdp"
-                   android:textColor="@color/normalText"
-                   android:dr="90"/>
+                   android:textColor="@color/normalText" />
            </LinearLayout>
            <LinearLayout
                android:layout_width="wrap_content"
@@ -200,8 +199,7 @@
                    style="@style/TitleText"
                    android:text="0967147057"
                    android:layout_marginStart="@dimen/_10sdp"
-                   android:textColor="@color/normalText"
-                   android:dr="90"/>
+                   android:textColor="@color/normalText" />
            </LinearLayout>
            <androidx.appcompat.widget.AppCompatTextView
                style="@style/TitleText"
@@ -223,8 +221,7 @@
                    style="@style/TitleText"
                    android:text="Le Thanh Quy"
                    android:layout_marginStart="@dimen/_10sdp"
-                   android:textColor="@color/normalText"
-                   android:dr="90"/>
+                   android:textColor="@color/normalText" />
            </LinearLayout>
            <LinearLayout
                android:layout_width="wrap_content"
@@ -241,8 +238,7 @@
                    style="@style/TitleText"
                    android:text="Techcombank"
                    android:layout_marginStart="@dimen/_10sdp"
-                   android:textColor="@color/normalText"
-                   android:dr="90"/>
+                   android:textColor="@color/normalText" />
            </LinearLayout>
 
            <LinearLayout
@@ -260,8 +256,7 @@
                    style="@style/TitleText"
                    android:text="123456789"
                    android:layout_marginStart="@dimen/_10sdp"
-                   android:textColor="@color/normalText"
-                   android:dr="90"/>
+                   android:textColor="@color/normalText" />
            </LinearLayout>
        </LinearLayout>
    </RelativeLayout>

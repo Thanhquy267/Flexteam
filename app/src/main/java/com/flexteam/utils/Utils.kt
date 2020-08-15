@@ -33,6 +33,8 @@ import android.widget.Toast
 import com.flexteam.MainApplication
 import com.flexteam.R
 import java.io.ByteArrayOutputStream
+import java.text.ParseException
+import java.text.SimpleDateFormat
 import java.util.*
 
 class Utils {
@@ -188,6 +190,29 @@ class Utils {
                 }
             }
             return false
+        }
+
+        fun stringToDate(dateStr: String?, format: String? = "yyyy-MM-dd'T'HH:mm:ss", locale: Locale = Locale.getDefault(), isUTC: Boolean = false): Date? {
+            if (dateStr == null || format == null) return null
+            val formatter = SimpleDateFormat(format, locale)
+            if (isUTC) formatter.timeZone = TimeZone.getTimeZone("UTC")
+            return try {
+                formatter.parse(dateStr)
+            } catch (e: ParseException) {
+                e.printStackTrace()
+                null
+            }
+        }
+
+        fun dateToString(date: Date, format: String = "yyyy-MM-dd'T'HH:mm:ss", locale: Locale = Locale.getDefault(), isUTC: Boolean = false): String? {
+            return try {
+                val formatter = SimpleDateFormat(format, locale)
+                if (isUTC) formatter.timeZone = TimeZone.getTimeZone("UTC")
+                formatter.format(date)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
     }
 }

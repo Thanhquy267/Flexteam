@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.flexteam.feature.home.schedule.ScheduleViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_date_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_clock"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_margin="@dimen/_5sdp"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/iv_clock"
+                android:text="@{viewModel.MDateDisplayText}"
+                android:onClick="@{() -> viewModel.onDateClicked()}"
+                android:layout_toStartOf="@id/tv_update"
+                android:textColor="@color/blue_98"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                tools:text="Today" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/blue_98"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="@{viewModel.MShowUpdate? View.VISIBLE : View.GONE}"
+                android:onClick="@{() -> viewModel.update()}"
+                android:textStyle="bold"
+                android:text="@string/update" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_date_layout" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_available"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:src="@drawable/ic_check"
+            android:tint="@color/white"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
+            app:backgroundTint="@color/grey_b7"
+            app:fabCustomSize="@dimen/_40sdp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_busy"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_above="@id/fab_available"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/ic_close"
+            android:tint="@color/white"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
+            app:backgroundTint="@color/grey_b7"
+            app:fabCustomSize="@dimen/_40sdp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_edit"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:src="@drawable/ic_mode_edit"
+            android:tint="@color/white"
+            app:fabCustomSize="@dimen/_40sdp" />
+    </RelativeLayout>
+</layout>

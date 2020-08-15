@@ -11,6 +11,7 @@ import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.databinding.ActivityHomeBinding
 import com.flexteam.feature.home.chat.ChatListFragment
 import com.flexteam.feature.home.project.ProjectFragment
+import com.flexteam.feature.home.schedule.ScheduleFragment
 import com.flexteam.utils.StringUtil
 import com.flexteam.utils.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -35,7 +36,7 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
         val mainPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
         mainPagerAdapter.addFrag(ChatListFragment())
         mainPagerAdapter.addFrag(ProjectFragment())
-        mainPagerAdapter.addFrag(ChatListFragment())
+        mainPagerAdapter.addFrag(ScheduleFragment())
         mainPagerAdapter.addFrag(ChatListFragment())
         mLayoutBinding.vpMain.adapter = mainPagerAdapter
         mLayoutBinding.vpMain.offscreenPageLimit = mainPagerAdapter.count
