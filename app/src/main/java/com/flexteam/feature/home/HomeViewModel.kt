@@ -2,6 +2,7 @@ package com.flexteam.feature.home
 
 import android.content.Context
 import android.content.Intent
+import androidx.databinding.ObservableField
 import com.flexteam.R
 import com.flexteam.base.BaseViewModel
 import com.flexteam.customview.ActionBarViewModel
@@ -14,6 +15,7 @@ class HomeViewModel : BaseViewModel() {
     val mActionBarViewModel = ActionBarViewModel()
     var mContext: Context? = null
     var mCurrentTab = TabType.TabChat.value
+    var mShowFab = ObservableField(false)
 
     override fun onReady() {
         super.onReady()

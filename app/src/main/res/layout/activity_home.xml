@@ -5,24 +5,28 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="viewModel"
             type="com.flexteam.feature.home.HomeViewModel" />
     </data>
 
     <RelativeLayout
+        android:animateLayoutChanges="true"
         android:id="@+id/rl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <include
             android:id="@+id/layout_action_bar"
-            layout="@layout/layout_action_bar"/>
+            layout="@layout/layout_action_bar" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@id/rl_bottom_navigation"
             android:layout_below="@id/layout_action_bar" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,11 +35,12 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
             android:src="@drawable/ic_profile"
             android:tint="@color/white"
-            app:elevation="1dp"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="1dp"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -44,11 +49,12 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
             android:src="@drawable/ic_team_profile"
             android:tint="@color/white"
-            app:elevation="1dp"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="1dp"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -57,11 +63,12 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
             android:src="@drawable/ic_create_offline"
             android:tint="@color/white"
-            app:elevation="1dp"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="1dp"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -70,11 +77,12 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
             android:src="@drawable/ic_note"
             android:tint="@color/white"
-            app:elevation="1dp"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="1dp"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -83,11 +91,12 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
             android:src="@drawable/ic_setting"
             android:tint="@color/white"
-            app:elevation="1dp"
+            android:visibility="@{viewModel.MShowFab? View.VISIBLE : View.GONE}"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="1dp"
             app:fabCustomSize="@dimen/_30sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -99,10 +108,10 @@
             android:layout_marginBottom="@dimen/_25sdp"
             android:src="@drawable/ic_plus"
             android:tint="@color/white"
-            app:elevation="2dp"
             app:backgroundTint="@color/colorPrimary"
+            app:elevation="2dp"
             app:fabCustomSize="@dimen/_40sdp"
-            tools:visibility="gone" />
+            tools:visibility="visible" />
 
         <RelativeLayout
             android:id="@+id/rl_bottom_navigation"
@@ -129,8 +138,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
-                        app:srcCompat="@drawable/ic_chat"
-                        android:tint="@color/normalText" />
+                        android:tint="@color/normalText"
+                        app:srcCompat="@drawable/ic_chat" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/iv_project"
@@ -139,8 +148,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
-                        app:srcCompat="@drawable/ic_task_list"
-                        android:tint="@color/normalText"/>
+                        android:tint="@color/normalText"
+                        app:srcCompat="@drawable/ic_task_list" />
 
                     <View
                         android:layout_width="0dp"
@@ -154,8 +163,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_10sdp"
-                        app:srcCompat="@drawable/ic_group_people"
-                        android:tint="@color/normalText"/>
+                        android:tint="@color/normalText"
+                        app:srcCompat="@drawable/ic_group_people" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/iv_tab_team_list"
@@ -164,8 +173,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_12sdp"
-                        app:srcCompat="@drawable/ic_profile"
-                        android:tint="@color/normalText" />
+                        android:tint="@color/normalText"
+                        app:srcCompat="@drawable/ic_profile" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

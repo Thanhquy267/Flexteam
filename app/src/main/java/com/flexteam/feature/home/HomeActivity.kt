@@ -1,6 +1,7 @@
 package com.flexteam.feature.home
 
 import android.content.Intent
+import android.os.Handler
 import android.view.animation.OvershootInterpolator
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -219,7 +220,6 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
         }
     }
 
-
     private fun setFabClicked() {
         mLayoutBinding.fabMore.setOnClickListener {
             mIsFabClicked = !mIsFabClicked
@@ -270,6 +270,7 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
     }
 
     private fun rotateFabForward() {
+        mViewModel.mShowFab.set(true)
         ViewCompat.animate(mLayoutBinding.fabMore)
             .rotation(135.0F)
             .withLayer()
@@ -280,6 +281,9 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
     }
 
     private fun rotateFabBackward() {
+        Handler().postDelayed({
+            mViewModel.mShowFab.set(false)
+        }, 100L)
         ViewCompat.animate(mLayoutBinding.fabMore)
             .rotation(0.0F)
             .withLayer()
@@ -301,11 +305,11 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
     }
 
     private fun expandSubFabs() {
-        translateFab(mLayoutBinding.fab1, 0.0F, -220.0F)
-        translateFab(mLayoutBinding.fab2, 125.0F, -175.0F)
-        translateFab(mLayoutBinding.fab3, -125.0F, -175.0F)
-        translateFab(mLayoutBinding.fab4, 200.0F, -70.0F)
-        translateFab(mLayoutBinding.fab5, -200.0F, -70.0F)
+        translateFab(mLayoutBinding.fab1, 0.0F, resources.getDimensionPixelOffset(R.dimen._minus55sdp).toFloat())
+        translateFab(mLayoutBinding.fab2, resources.getDimensionPixelOffset(R.dimen._31sdp).toFloat(), resources.getDimensionPixelOffset(R.dimen._minus38sdp).toFloat())
+        translateFab(mLayoutBinding.fab3, resources.getDimensionPixelOffset(R.dimen._minus31sdp).toFloat(), resources.getDimensionPixelOffset(R.dimen._minus38sdp).toFloat())
+        translateFab(mLayoutBinding.fab4, resources.getDimensionPixelOffset(R.dimen._52sdp).toFloat(), resources.getDimensionPixelOffset(R.dimen._minus10sdp).toFloat())
+        translateFab(mLayoutBinding.fab5, resources.getDimensionPixelOffset(R.dimen._minus52sdp).toFloat(), resources.getDimensionPixelOffset(R.dimen._minus10sdp).toFloat())
     }
 
     private fun collapseSubFabs() {
