@@ -5,6 +5,7 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.databinding.BaseObservable
 import androidx.databinding.ObservableField
+import com.flexteam.R
 import com.flexteam.utils.Utils
 import io.reactivex.functions.Consumer
 
@@ -13,6 +14,7 @@ class ActionBarViewModel : BaseObservable(){
     var mTitle = ObservableField("")
     var mShouldShowStartIcon = ObservableField(false)
     var mShouldShowEndIcon = ObservableField(false)
+    var mStartIconResource =  ObservableField(R.drawable.ic_arrow_back)
     var mStartIconClickConsumer : Consumer<Unit>? = null
     var mEndIconClickConsumer : Consumer<Unit>? = null
 

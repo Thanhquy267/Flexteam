@@ -7,7 +7,7 @@ import com.flexteam.adapter.OnProjectListener
 import com.flexteam.adapter.ProjectAdapter
 import com.flexteam.base.BaseBindingModelFragment
 import com.flexteam.databinding.FragmentProjectBinding
-import com.flexteam.feature.home.project.task.TaskFragment
+import com.flexteam.feature.home.project.task.TaskActivity
 import com.flexteam.model.ProjectModel
 
 class ProjectFragment : BaseBindingModelFragment<FragmentProjectBinding, ProjectViewModel>(),
@@ -22,7 +22,7 @@ class ProjectFragment : BaseBindingModelFragment<FragmentProjectBinding, Project
     }
 
     override fun onProjectClick(project: ProjectModel?) {
-        mViewModel.mActivityNavigator?.addFragment(R.id.rl_root, TaskFragment(), true)
+        mViewModel.mActivityNavigator?.startActivity(TaskActivity())
     }
 
     private fun setUpRecyclerView() {

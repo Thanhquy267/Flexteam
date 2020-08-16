@@ -39,6 +39,7 @@
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
         <activity android:name=".feature.home.chat.chatdetail.ChatDetailActivity" />
         <activity android:name=".feature.home.container.ContainerActivity" />
+        <activity android:name=".feature.home.project.task.TaskActivity" />
     </application>
 
 </manifest>

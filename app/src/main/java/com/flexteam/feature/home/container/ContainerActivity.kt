@@ -5,6 +5,7 @@ import com.flexteam.BR
 import com.flexteam.R
 import com.flexteam.base.BaseBindingModelActivity
 import com.flexteam.databinding.ActivityContainerBinding
+import com.flexteam.feature.home.profile.ProfileFragment
 import com.flexteam.feature.notification.NotificationFragment
 import com.flexteam.type.ContainerType
 
@@ -24,6 +25,11 @@ class ContainerActivity : BaseBindingModelActivity<ActivityContainerBinding, Con
             ContainerType.NOTIFICATION.value -> mViewModel.mActivityNavigator?.addFragment(
                 R.id.rl_root,
                 NotificationFragment.newInstance(),
+                shouldAddStack = false
+            )
+            ContainerType.PROFILE.value -> mViewModel.mActivityNavigator?.addFragment(
+                R.id.rl_root,
+                ProfileFragment(),
                 shouldAddStack = false
             )
         }

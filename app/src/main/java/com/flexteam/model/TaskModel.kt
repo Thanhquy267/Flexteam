@@ -15,4 +15,7 @@ class TaskModel {
     @SerializedName("status")
     var status: Int? = 0
 
+    @SerializedName("tag")
+    var tag: String? = null
+
 }

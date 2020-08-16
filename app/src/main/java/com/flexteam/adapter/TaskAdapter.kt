@@ -19,9 +19,9 @@ class TaskAdapter(private val listTasks : ArrayList<TaskModel>) : RecyclerView.A
     }
 }
 
-class TaskViewHolder(val binder : LayoutItemTaskBinding) : RecyclerView.ViewHolder(binder.root) {
+class TaskViewHolder(private val binder : LayoutItemTaskBinding) : RecyclerView.ViewHolder(binder.root) {
   fun bind(task : TaskModel){
       binder.tvTitle.text = task.title
-      binder.tvDescription.text = task.description
+      binder.tvTag.text = task.tag
   }
 }

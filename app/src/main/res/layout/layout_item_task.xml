@@ -48,20 +48,39 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/ll_status"
                 android:layout_toStartOf="@id/cv_avatar"
-                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_centerVertical="true"
                 android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_16sdp"
+                    app:cardBackgroundColor="@color/red_66"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="0dp">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tag"
+                        style="@style/NormalText"
+                        android:textColor="@color/white"
+                        android:maxLines="2"
+                        android:layout_gravity="center"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        tools:text="Login" />
+                </androidx.cardview.widget.CardView>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_title"
                     style="@style/TitleText"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
                     android:textColor="@color/titleText"
-                    tools:text="Login/Register Screen" />
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    tools:text="[Flexteam] Handle UI for login screen  Handle UI for login screen  Handle UI for login screen " />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_description"
-                    style="@style/NormalText"
-                    tools:text="Handle UI/Logic/API" />
             </LinearLayout>
 
             <androidx.cardview.widget.CardView

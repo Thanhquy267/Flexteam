@@ -18,7 +18,6 @@ import com.flexteam.type.ContainerType
 import com.flexteam.utils.StringUtil
 import com.flexteam.utils.Utils
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import io.reactivex.functions.Consumer
 
 class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel>() {
 
@@ -30,6 +29,7 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
 
     override fun setupView() {
         super.setupView()
+        mViewModel.mContext = this
         setFabClicked()
         setUpViewPager()
         handleBottomNavigator()
@@ -64,11 +64,15 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
             override fun onPageScrollStateChanged(state: Int) {
             }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
             }
 
             override fun onPageSelected(position: Int) {
-                when(position){
+                when (position) {
                     TabType.TabChat.value -> handleTabSelected(TabType.TabChat)
                     TabType.TabProject.value -> handleTabSelected(TabType.TabProject)
                     TabType.TabSchedule.value -> handleTabSelected(TabType.TabSchedule)
@@ -81,40 +85,134 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
     private fun handleTabSelected(tab: TabType) {
         when (tab.value) {
             TabType.TabChat.value -> {
-                mLayoutBinding.ivTabChat.setColorFilter(ContextCompat.getColor(baseContext, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivProject.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabSchedule.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabTeamList.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
+                mViewModel.mCurrentTab = TabType.TabChat.value
+                //
+                mLayoutBinding.ivTabChat.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.colorPrimary
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivProject.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabSchedule.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabTeamList.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
                 //
                 mViewModel.mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.chat_title))
-                mViewModel.mActionBarViewModel.mStartIconClickConsumer = Consumer {
-                    val intent = Intent(this, ContainerActivity::class.java)
-                    val bundle = ContainerActivity.createDataBundle(ContainerType.NOTIFICATION.value)
-                    intent.putExtras(bundle)
-                    mViewModel.mActivityNavigator?.mActivity?.startActivity(intent)
-                }
             }
             TabType.TabProject.value -> {
-                mLayoutBinding.ivTabChat.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivProject.setColorFilter(ContextCompat.getColor(baseContext, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabSchedule.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabTeamList.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
+                mViewModel.mCurrentTab = TabType.TabProject.value
+                //
+                mLayoutBinding.ivTabChat.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivProject.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.colorPrimary
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabSchedule.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabTeamList.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
                 //
                 mViewModel.mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.project_title))
             }
             TabType.TabSchedule.value -> {
-                mLayoutBinding.ivTabChat.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivProject.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabSchedule.setColorFilter(ContextCompat.getColor(baseContext, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabTeamList.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
+                mViewModel.mCurrentTab = TabType.TabSchedule.value
+                //
+                mLayoutBinding.ivTabChat.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivProject.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabSchedule.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.colorPrimary
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabTeamList.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
                 //
                 mViewModel.mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.schedule_title))
             }
             TabType.TabTeamList.value -> {
-                mLayoutBinding.ivTabChat.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivProject.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabSchedule.setColorFilter(ContextCompat.getColor(baseContext, R.color.normalText), android.graphics.PorterDuff.Mode.SRC_IN)
-                mLayoutBinding.ivTabTeamList.setColorFilter(ContextCompat.getColor(baseContext, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN)
+                mViewModel.mCurrentTab = TabType.TabTeamList.value
+                //
+                mLayoutBinding.ivTabChat.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivProject.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabSchedule.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.normalText
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                //
+                mLayoutBinding.ivTabTeamList.setColorFilter(
+                    ContextCompat.getColor(
+                        baseContext,
+                        R.color.colorPrimary
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
                 //
                 mViewModel.mActionBarViewModel.mTitle.set(StringUtil.getString(R.string.team_list_title))
             }
@@ -130,53 +228,76 @@ class HomeActivity : BaseBindingModelActivity<ActivityHomeBinding, HomeViewModel
             else
                 rotateFabBackward()
         }
+        //Profile Click
         mLayoutBinding.fab1.setOnClickListener {
-            Utils.showToast("fab1 clicked!!!!")
+            rotateFabBackward()
+            mIsFabClicked = !mIsFabClicked
+            //
+            val intent = Intent(this, ContainerActivity::class.java)
+            val bundle = ContainerActivity.createDataBundle(ContainerType.PROFILE.value)
+            intent.putExtras(bundle)
+            mViewModel.mActivityNavigator?.mActivity?.startActivity(intent)
         }
+        //Team Profile Click
         mLayoutBinding.fab2.setOnClickListener {
-            Utils.showToast("fab2 clicked!!!!")
+            rotateFabBackward()
+            mIsFabClicked = !mIsFabClicked
+            //
+            Utils.showToast("Team Profile")
         }
+        //Offline Click
         mLayoutBinding.fab3.setOnClickListener {
-            Utils.showToast("fab3 clicked!!!!")
+            rotateFabBackward()
+            mIsFabClicked = !mIsFabClicked
+            //
+            Utils.showToast("Offline")
         }
+        //Note Click
         mLayoutBinding.fab4.setOnClickListener {
-            Utils.showToast("fab4 clicked!!!!")
+            rotateFabBackward()
+            mIsFabClicked = !mIsFabClicked
+            //
+            Utils.showToast("Note")
         }
+        //Settings Click
         mLayoutBinding.fab5.setOnClickListener {
-            Utils.showToast("fab5 clicked!!!!")
+            rotateFabBackward()
+            mIsFabClicked = !mIsFabClicked
+            //
+            Utils.showToast("Settings")
         }
 
     }
 
     private fun rotateFabForward() {
         ViewCompat.animate(mLayoutBinding.fabMore)
-                .rotation(135.0F)
-                .withLayer()
-                .setDuration(500)
-                .setInterpolator(OvershootInterpolator(5.0F))
-                .start()
+            .rotation(135.0F)
+            .withLayer()
+            .setDuration(500)
+            .setInterpolator(OvershootInterpolator(5.0F))
+            .start()
         expandSubFabs()
     }
 
     private fun rotateFabBackward() {
         ViewCompat.animate(mLayoutBinding.fabMore)
-                .rotation(0.0F)
-                .withLayer()
-                .setDuration(500)
-                .setInterpolator(OvershootInterpolator(5.0F))
-                .start()
+            .rotation(0.0F)
+            .withLayer()
+            .setDuration(500)
+            .setInterpolator(OvershootInterpolator(5.0F))
+            .start()
         collapseSubFabs()
     }
 
     private fun translateFab(fab: FloatingActionButton, x: Float, y: Float) {
         ViewCompat.animate(fab)
-                .rotation(if (x == 0.0F && y == 0.0F) 0.0F else 360.0F)
-                .translationY(y)
-                .translationX(x)
-                .withLayer()
-                .setDuration(500)
-                .setInterpolator(OvershootInterpolator(2.0F))
-                .start()
+            .rotation(if (x == 0.0F && y == 0.0F) 0.0F else 360.0F)
+            .translationY(y)
+            .translationX(x)
+            .withLayer()
+            .setDuration(500)
+            .setInterpolator(OvershootInterpolator(2.0F))
+            .start()
     }
 
     private fun expandSubFabs() {

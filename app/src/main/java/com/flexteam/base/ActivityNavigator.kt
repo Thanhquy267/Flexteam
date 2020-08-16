@@ -97,6 +97,11 @@ class ActivityNavigator(val mActivity: BaseActivity?, var mFragment: BaseFragmen
         mActivity?.updateCurrentFragment()
     }
 
+    fun popFragmentBack(){
+        mActivity?.onBackPressed()
+        mActivity?.updateCurrentFragment()
+    }
+
     fun popToSpecificFragment(className: String) {
         mActivity?.supportFragmentManager?.popBackStack(
             className,

@@ -32,4 +32,6 @@
     <string name="available_type_available">Available</string>
     <string name="available_type_busy">Busy</string>
     <string name="available_type_not_provided">Not provided</string>
+
+    <string name="profile_title">Profile</string>
 </resources>
